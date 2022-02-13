@@ -50,14 +50,12 @@
 			}
 		</style>
 		<script>
-			if(localStorage.getItem('Focal') != null ){
-				var intFocal=localStorage.getItem('Focal');
-				var intSpeed=localStorage.getItem('Speed');
-
-			} else {
 				var intFocal=50;
 				var intSpeed=20;
-			}
+			if(localStorage.getItem('Focal')){
+				intFocal=localStorage.getItem('Focal');
+				intSpeed=localStorage.getItem('Speed');
+			} 
 			
 			 smooth=(e)=>{
 				
@@ -101,6 +99,31 @@
 			}
 			window.onload=()=>{
 				smooth(document.body);
+
+				var resuFocal = document.querySelector('#counterFocal');
+				var resuSpeed = document.querySelector('#counterSpeed');
+	
+					resuFocal.textContent = intFocal;
+					resuSpeed.textContent = intSpeed;
+				
+				document.querySelector('#rangFocal').value = intFocal;
+				document.querySelector('#rangFocal').addEventListener('change', (event) => {
+					
+					resuFocal.textContent = event.target.value;
+					intFocal = Number(event.target.value);	
+					localStorage.setItem('Focal', intFocal);
+				
+				});
+
+
+				document.querySelector('#rangSpeed').value = intSpeed;
+				document.querySelector('#rangSpeed').addEventListener('change', (event) => {
+					
+					resuSpeed.textContent = event.target.value;
+					intSpeed = Number(event.target.value);
+					localStorage.setItem('Speed', intSpeed);
+			
+				});
 			}
 
 			
@@ -113,13 +136,13 @@
 
 				<p id="counterFocal">50</p>
 				<input type="range" id="rangFocal" name="Focal" 
-				min="0" max="100" value="50" step="1">
+				min="0" max="100" value="50" step="10">
 				<label for="volume">Focal</label>
 			
 
 				<p id="counterSpeed">20</p>
 				<input type="range" id="rangSpeed" name="Speed" 
-						min="0" max="100" value="20" step="1">
+						min="0" max="100" value="20" step="10">
 				<label for="cowbell">Speed</label>
 			
 		</div>
@@ -177,34 +200,6 @@
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		<script>
-
-			var resuFocal = document.querySelector('#counterFocal');
-			var resuSpeed = document.querySelector('#counterSpeed');
-
-			
-				
-				resuFocal.textContent = intFocal;
-				resuSpeed.textContent = intSpeed;
 		
-		document.querySelector('#rangFocal').value = intFocal;
-		document.querySelector('#rangFocal').addEventListener('change', (event) => {
-			
-			resuFocal.textContent = event.target.value;
-			intFocal = Number(event.target.value);	
-			localStorage.setItem('Focal', intFocal);
-		
-		});
-
-
-		document.querySelector('#rangSpeed').value = intSpeed;
-		document.querySelector('#rangSpeed').addEventListener('change', (event) => {
-			
-			resuSpeed.textContent = event.target.value;
-			intSpeed = Number(event.target.value);
-			localStorage.setItem('Speed', intSpeed);
-	
-		});
-		</script>
 	</body>
 </html>
