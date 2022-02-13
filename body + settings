@@ -107,7 +107,7 @@
 					resuSpeed.textContent = intSpeed;
 				
 				document.querySelector('#rangFocal').value = intFocal;
-				document.querySelector('#rangFocal').addEventListener('change', (event) => {
+				document.querySelector('#rangFocal').addEventListener('input', (event) => {
 					
 					resuFocal.textContent = event.target.value;
 					intFocal = Number(event.target.value);	
@@ -117,7 +117,7 @@
 
 
 				document.querySelector('#rangSpeed').value = intSpeed;
-				document.querySelector('#rangSpeed').addEventListener('change', (event) => {
+				document.querySelector('#rangSpeed').addEventListener('input', (event) => {
 					
 					resuSpeed.textContent = event.target.value;
 					intSpeed = Number(event.target.value);
