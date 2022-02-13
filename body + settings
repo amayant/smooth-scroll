@@ -50,12 +50,10 @@
 			}
 		</style>
 		<script>
-			console.log(localStorage.getItem('Focal'));
 			if(localStorage.getItem('Focal') != null ){
 				var intFocal=localStorage.getItem('Focal');
 				var intSpeed=localStorage.getItem('Speed');
 
-				console.log('data trouvé');
 			} else {
 				var intFocal=50;
 				var intSpeed=20;
@@ -115,13 +113,13 @@
 
 				<p id="counterFocal">50</p>
 				<input type="range" id="rangFocal" name="Focal" 
-				min="0" max="100" value="50" step="10">
+				min="0" max="100" value="50" step="1">
 				<label for="volume">Focal</label>
 			
 
 				<p id="counterSpeed">20</p>
 				<input type="range" id="rangSpeed" name="Speed" 
-						min="0" max="100" value="20" step="10">
+						min="0" max="100" value="20" step="1">
 				<label for="cowbell">Speed</label>
 			
 		</div>
