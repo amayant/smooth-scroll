@@ -132,7 +132,7 @@
 	</head>
 	<body bgcolor="#FFF">
 		<div class="interface">
-			<h5>Audio settings:</h5>
+			<h5>Scroll settings:</h5>
 
 				<p id="counterFocal">50</p>
 				<input type="range" id="rangFocal" name="Focal" 
