@@ -53,8 +53,8 @@
 				var intFocal=50;
 				var intSpeed=20;
 			if(localStorage.getItem('Focal')){
-				intFocal=localStorage.getItem('Focal');
-				intSpeed=localStorage.getItem('Speed');
+				intFocal=parseInt(localStorage.getItem('Focal'));
+				intSpeed=parseInt(localStorage.getItem('Speed'));
 			} 
 			
 			 smooth=(e)=>{
